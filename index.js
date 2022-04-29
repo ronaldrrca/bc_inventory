@@ -1,22 +1,28 @@
 //Quagga es la librería que permite realizar lecturas de códigos de barra mediante la cámara de un dispositivo
-Quagga.init({
-    inputStream : {
-    name : "Live",
-    type : "LiveStream",
-    target: document.querySelector('#camara') 
-    },
-    decoder : {
-    readers : ["code_128_reader"]
-    }
-}, 
 
-function(err) {
-    if (err) {
-        console.log(err);
-        return
-    }
-    Quagga.start();
-});
+//Se crea una función que será envocada cada vez que se nececite iniciar la lbrería
+function quaggaStart() {
+    Quagga.init({
+        inputStream : {
+        name : "Live",
+        type : "LiveStream",
+        target: document.querySelector('#camara') 
+        },
+        decoder : {
+        readers : ["code_128_reader"]
+        }
+    }, 
+    
+    function(err) {
+        if (err) {
+            console.log(err);
+            return
+        }
+        Quagga.start();
+    });
+}
+
+quaggaStart()//Iniciamos la librería, esta y todas las veces que se necesite después de haberla detenido
 
 //Acá, se dispara todo lo que necesitemos una vez se detecte el código por la cámara
 Quagga.onDetected(function (data) {
@@ -61,24 +67,7 @@ Quagga.onDetected(function (data) {
    
 //Botón que habilita una nueva lectura, sólo aparece cuando la última lectura fue positiva
 document.getElementById("newReading").addEventListener("click", ()=> {
-    Quagga.init({
-        inputStream : {
-        name : "Live",
-        type : "LiveStream",
-        target: document.querySelector('#camara')    // Or '#yourElement' (optional)
-        },
-        decoder : {
-        readers : ["code_128_reader"]
-        }
-    }, 
-    
-    function(err) {
-        if (err) {
-            console.log(err);
-            return
-        }
-        Quagga.start();
-    });
+    quaggaStart()
 
     document.getElementById("newReading").style.display = "none"
 })
@@ -96,25 +85,7 @@ document.getElementById("alertOk").addEventListener("click", ()=> {
     document.getElementById("codigoBarras").innerHTML = ""  
     codigo = "";
 
-    Quagga.init({
-        inputStream : {
-        name : "Live",
-        type : "LiveStream",
-        target: document.querySelector('#camara')    // Or '#yourElement' (optional)
-        },
-        decoder : {
-        readers : ["code_128_reader"]
-        }
-    }, 
-    
-    function(err) {
-        if (err) {
-            console.log(err);
-            return
-        }
-        console.log("Initialization finished. Ready to start");
-        Quagga.start();
-    });
+    quaggaStart()
 })
 
 
