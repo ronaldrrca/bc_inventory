@@ -9,11 +9,53 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin-top: 20px;
+    width: 414px;
+    height: 100vh;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
+
+header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    margin-bottom: 20px;
+    background-color: #ffffff;
 }
 
 main{
-    width: 414px;
+    width: 100%;
+}
+
+footer{
+    margin-top: 100px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+footer p{
+    font-size: 14px;
+    line-height: 20px;
+}
+
+footer p:nth-child(2){
+    margin-bottom: 20px;
+}
+
+footer a{
+    color: blue;
+}
+
+h1{
+    font-size: 30px;
+    color: crimson;
+}
+
+h1 span{
+    color: darkcyan;
 }
 
 #reading_container{
@@ -50,12 +92,15 @@ main{
 #data{
     position: relative;  
     padding: 10px;
+    margin-top: 20px;
+    background-color: #ccc;
     font-size: 18px;
     font-weight: bold;
 }
 
 #data p{
     line-height: 25px;
+    color: #000;
 }
 
 #data p span{
@@ -72,8 +117,6 @@ main{
     position: absolute;
     top: calc(50% - 15px);
     left: calc(50% - 115px);
-    font-size: 20px;
-    color: #ffffff;
     background-color: #333333;
     border-radius: 5px;
 }
@@ -81,7 +124,8 @@ main{
 #alert p{
     text-align: center;
     margin-bottom: 15px;
- 
+    font-size: 20px;
+    color: #ffffff;
 }
 
 #alertOk{
@@ -95,11 +139,10 @@ main{
     display: none;
     justify-content: center;
     align-items: center;
-    width: 50px;
+    width: 160px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 0 20px 20px 0;
     background-color: crimson;
-    opacity: 0.7;
     position: absolute;
     bottom: 10px;
     right: 10px;
