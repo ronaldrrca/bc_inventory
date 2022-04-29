@@ -1,3 +1,5 @@
+<!-- <?php require_once 'listarObjetosControl.php' ?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,21 +11,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section id="general_container">
-        <div id="resultado"></div>
-        <div id="camara">
-            <div id="newReading">+</div>
-        </div>
-    </section>
-    <section id="data">
-        <p>Código: <span id="code"></span></p>
-        <p>Nombre: <span id="name"></span></p>
-        <p>Serial: <span id="serial"></span></p>
-        <div id="alert">
-            <P>Código <span id="noFound"></span><br> no encontrado</P>
-            <button id="alertOk">Aceptar</button>
-        </div>
-    </section>
+    <main>
+        <section id="reading_container">
+            <div id="resultado_lectura"></div>
+            <div id="camara">
+                <div id="newReading">+</div>
+            </div>
+        </section>
+        <section id="data">
+            <p>Tipo: <span id="tipo"></span></p>
+            <p>Marca: <span id="marca"></span></p>
+            <p>Modelo: <span id="modelo"></span></p>
+            <p>Serial: <span id="serial"></span></p>
+            <p>Estado: <span id="estado"></span></p>
+            <p>Código barras: <span id="codigoBarras"></span></p>
+            <div id="alert">
+                <P>Código <span id="noFound"></span><br> no encontrado</P>
+                <button id="alertOk">Aceptar</button>
+            </div>
+        </section>
+    </main>
+    
     
     
     <script src="quagga.min.js"></script>

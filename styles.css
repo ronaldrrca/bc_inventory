@@ -5,10 +5,18 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     margin-top: 20px;
 }
 
-#general_container{
+main{
+    width: 414px;
+}
+
+#reading_container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +25,7 @@ body{
     /* background-color: crimson; */
 }
 
-#resultado{
+#resultado_lectura{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +76,6 @@ body{
     color: #ffffff;
     background-color: #333333;
     border-radius: 5px;
-    /* padding: 15px; */
 }
 
 #alert p{
