@@ -38,12 +38,12 @@ Quagga.onDetected(function (data) {
         data.forEach(element => {
             switch (codigoLeido) {//Evaluamos sí el código leído se encuentra en la BD
                 case element['inventario_codigo_barras']://En caso de que se encuentre el código, se toman las acciones necesarias
-                    document.getElementById("tipo").innerHTML = element.inventario_tipo
-                    document.getElementById("marca").innerHTML = element.inventario_marca
-                    document.getElementById("modelo").innerHTML = element.inventario_modelo  
-                    document.getElementById("serial").innerHTML = element.inventario_serial 
-                    document.getElementById("estado").innerHTML = element.inventario_estado  
-                    document.getElementById("codigoBarras").innerHTML = element.inventario_codigo_barras 
+                    document.getElementById("tipo").value = element.inventario_tipo
+                    document.getElementById("marca").value = element.inventario_marca
+                    document.getElementById("modelo").value = element.inventario_modelo  
+                    document.getElementById("serial").value = element.inventario_serial 
+                    document.getElementById("estado").value = element.inventario_estado  
+                    document.getElementById("codigoBarras").value = element.inventario_codigo_barras 
                     document.getElementById("newReading").style.display = "flex" 
                     match = true
                     break;
@@ -54,12 +54,12 @@ Quagga.onDetected(function (data) {
                 case false:
                     document.getElementById("alert").style.display = "flex"
                     document.getElementById("noFound").innerHTML = codigoLeido
-                    document.getElementById("tipo").innerHTML = ""
-                    document.getElementById("marca").innerHTML = ""
-                    document.getElementById("modelo").innerHTML = ""  
-                    document.getElementById("serial").innerHTML = ""
-                    document.getElementById("estado").innerHTML = ""
-                    document.getElementById("codigoBarras").innerHTML = ""
+                    document.getElementById("tipo").value = ""
+                    document.getElementById("marca").value = ""
+                    document.getElementById("modelo").value = ""  
+                    document.getElementById("serial").value = ""
+                    document.getElementById("estado").value = ""
+                    document.getElementById("codigoBarras").value = ""
                     break;
             }
     })

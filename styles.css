@@ -94,17 +94,33 @@ h1 span{
     padding: 10px;
     margin-top: 20px;
     background-color: #ccc;
-    font-size: 18px;
-    font-weight: bold;
 }
 
-#data p{
+/* #data p{
     line-height: 25px;
     color: #000;
 }
 
 #data p span{
     font-weight: normal;
+} */
+
+label, input[type='text']{
+    width: 100%;
+}
+
+label{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input[type='text']{
+    min-height: 28px;
+    padding: 5px;
+    margin-bottom: 15px;
+    background-color: #333;
+    font-size: 18px;
+    color: #ffffff;
 }
 
 #alert{
