@@ -10,7 +10,6 @@ body{
     align-items: center;
     justify-content: flex-start;
     width: 414px;
-    height: 100vh;
     margin: 0 auto;
     border: 1px solid #ccc;
 }
@@ -27,13 +26,18 @@ header{
 }
 
 main{
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    max-width: 1024px;
 }
 
 footer{
+    width: 100%;
     margin-top: 100px;
     text-align: center;
     padding: 0 10px;
+    border-top: 2px solid #333;
 }
 
 footer p{
@@ -64,15 +68,15 @@ h1 span{
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    /* background-color: crimson; */
+    max-width: 400px;
 }
 
 #resultado_lectura{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    max-width: 400px;
+    /* width: 100%; */
+    width: 400px;
     height: 35px;
     margin-bottom: 10px;
     border: 3px solid #ccc;
@@ -91,19 +95,11 @@ h1 span{
 
 #data{
     position: relative;  
+    max-width: 400px;
     padding: 10px;
     margin-top: 20px;
     background-color: #ccc;
 }
-
-/* #data p{
-    line-height: 25px;
-    color: #000;
-}
-
-#data p span{
-    font-weight: normal;
-} */
 
 label, input[type='text']{
     width: 100%;
@@ -131,10 +127,11 @@ input[type='text']{
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: calc(50% - 15px);
+    top: calc(50% - 75px);
     left: calc(50% - 115px);
     background-color: #333333;
     border-radius: 5px;
+    z-index: 12;
 }
 
 #alert p{
@@ -167,3 +164,32 @@ input[type='text']{
     font-weight: bold;
     z-index: 10;
 }
+
+@media screen and (min-width: 768px){
+    body{
+        width: 768px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    body{
+        width: 1024px;
+    }
+
+    main{
+        width: 1024px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #data{
+        margin: 0;
+    }
+
+    #reading_container{
+        order: 2;
+    }
+
+ }
+
